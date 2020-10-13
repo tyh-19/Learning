@@ -11,7 +11,6 @@
 
 我们可以利用图形界面的Run GSEAPreranked工具，进行分析，如下图界面：
 
-![屏幕快照 2020-10-10 10.23.13](/Users/yuhuan/Desktop/屏幕快照 2020-10-10 10.23.13.png)
 
 也可以利用叫做[fgsea](http://bioconductor.org/packages/devel/bioc/vignettes/fgsea/inst/doc/fgsea-tutorial.html)的R包进行批量的分析和绘图。
 
