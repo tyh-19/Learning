@@ -73,12 +73,13 @@
 
   ```R
   # first input .rnk and .gmt as rnk.file, gmt.file
-  rnk.file <- system.file("extdata", "YourRanklist.rnk", package="fgsea")
-  gmt.file <- system.file("extdata", "YourGenesets.gmt", package="fgsea")
+  rnk.file <- "test2.rnk"
+  gmt.file <- "test2.gmt"
   
+  rnk.file
   # extract ranklist and geneset
   ranks <- read.table(rnk.file,
-                      header=TRUE, colClasses = c("character", "numeric"))
+                      header=T, colClasses = c("character", "numeric"))
   ranks <- setNames(ranks$t, ranks$ID)
   pathways <- gmtPathways(gmt.file)
   
@@ -87,9 +88,13 @@
   str(head(pathways))
   
   # run user-defined GSEA
-  fgseaRes <- fgsea(pathways, ranks, minSize=15, maxSize=500)
-  ```
+  fgseaRes <- fgsea(pathways, ranks, minSize=0, maxSize=500)
 
+  # check results
+  head(fgseaRes[order(pval), ])
+  
+  ```
+  
   
 
 + Install fgsea on Mac Mojave 10.14.6,  R 3.6.2
